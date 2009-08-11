@@ -1,11 +1,13 @@
 %w'rubygems sinatra haml simple-rss open-uri icalendar date htmlentities'.each { |l| require l }
 
 get '/' do
+  response.headers['Cache-Control'] = 'public, max-age=1800'
   content_type 'text/html', :charset => 'utf-8'
   haml :index
 end
 
 get '/ical' do
+  response.headers['Cache-Control'] = 'public, max-age=300'
   content_type 'text/calendar', :charset => 'utf-8'
   
   rss = SimpleRSS.parse open('http://www.unperfekthaus.de/feed/rss.xml')
@@ -28,6 +30,7 @@ get '/ical' do
 end
 
 get '/stylesheets/:name.css' do
+  response.headers['Cache-Control'] = 'public, max-age=1800'
   content_type 'text/css', :charset => 'utf-8'
   sass :"stylesheets/#{params[:name]}"
 end
