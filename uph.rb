@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 %w'rubygems sinatra haml simple-rss open-uri icalendar date htmlentities'.each { |l| require l }
 
 get '/' do
@@ -22,7 +23,8 @@ get '/ical' do
         dtstart DateTime.civil(t.year, t.month, t.day, $1.to_i, $2.to_i)
         dtend   DateTime.civil(t.year, t.month, t.day, $3.to_i, $4.to_i)
         summary he.decode($5)
-        description entry.link
+        #description ''
+        url entry.link
       end
     end
   end
