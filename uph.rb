@@ -18,6 +18,7 @@ get '/ical' do
   rss.entries.each do |entry|
     if entry.title.match /(\d{1,2})\:(\d{1,2})-(\d{1,2})\:(\d{1,2}) (.*)/
       cal.event do
+        uid     entry.guid
         dtstart DateTime.civil(t.year, t.month, t.day, $1.to_i, $2.to_i)
         dtend   DateTime.civil(t.year, t.month, t.day, $3.to_i, $4.to_i)
         summary he.decode($5)
