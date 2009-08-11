@@ -1,4 +1,9 @@
-%w'rubygems sinatra simple-rss open-uri icalendar date htmlentities'.each { |l| require l }
+%w'rubygems sinatra haml simple-rss open-uri icalendar date htmlentities'.each { |l| require l }
+
+get '/' do
+  content_type 'text/html', :charset => 'utf-8'
+  haml :index
+end
 
 get '/ical' do
   content_type 'text/calendar', :charset => 'utf-8'
@@ -22,8 +27,13 @@ get '/ical' do
   cal.to_ical
 end
 
+get '/stylesheets/:name.css' do
+  content_type 'text/css', :charset => 'utf-8'
+  sass :"stylesheets/#{params[:name]}"
+end
+
 get '/*' do
-  redirect '/ical'
+  redirect '/'
 end
 
 error do
