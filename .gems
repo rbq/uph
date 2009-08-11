@@ -1,6 +1,4 @@
-sinatra
 simple-rss
-open-uri
 icalendar
 date
 htmlentities
