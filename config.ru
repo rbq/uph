@@ -1,5 +1,3 @@
-require File.join(File.dirname(__FILE__), 'uph.rb')
+require 'uph'
 
-disable :run
-set :env, :production
-run Sinatra.application
+run Sinatra::Application
