@@ -1,10 +1,17 @@
 %h1
   %span> UpH
   %span{:style => 'font-weight: normal'}> Cal
+
 %p
-  Ein inoffizieller iCal-Kalender zum Essener Unperfekthaus.
-  %br
-  %a{:href => '/ical'}= "http://#{@env['HTTP_HOST']}/ical"    
+  Ein inoffizieller
+  %a{:href => '/ical'} iCal-Kalender
+  zum Unperfekthaus.
+
+%p
+  %strong Achtung:
+  Das UpH bietet bereits einen
+  %a{:href => 'http://www.unperfekthaus.de/feed/ics'} Kalender
+  für den kompletten Monat.
 
 %img{:src => 'howto1.png' }
 %img{:src => 'howto2.png' }
