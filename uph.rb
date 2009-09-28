@@ -25,7 +25,7 @@ get '/ical' do
         dtend   DateTime.civil(t.year, t.month, t.day, $3.to_i, $4.to_i)
         summary he.decode($5)
         #description ''
-        url entry.link
+        url     entry.link
       end
     end
   end
@@ -39,7 +39,7 @@ get '/stylesheets/:name.css' do
   sass :"stylesheets/#{params[:name]}"
 end
 
-get '/*' do
+not_found do
   redirect '/'
 end
 
