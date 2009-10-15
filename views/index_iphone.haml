@@ -1,0 +1,15 @@
+%ul#home{ :title => 'UpHCal', :selected => 'true' }
+  - @entries.each_with_index do |e, i|
+    %li
+      %a{ :href => '#entry'+i.to_s }= e[:title].word_shorten(28)
+
+- @entries.each_with_index do |e, i|
+  %div{ :id => 'entry'+i.to_s, :class => 'panel', :title => e[:title].word_shorten(28) }
+    %h2= e[:title]
+    %fieldset
+      .row
+        %label Zeit
+        %input{ :value => e[:start] + (e[:end] ? " bis #{e[:end]}" : '') + ' Uhr',  :type => 'text', :disabled => 'disabled' }
+      .row
+        %label Raum
+        %input{ :value => e[:room] ? "Raum #{e[:room]}" : 'keine Raumangabe', :type => 'text', :disabled => 'disabled' }
