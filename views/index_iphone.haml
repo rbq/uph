@@ -13,3 +13,8 @@
       .row
         %label Raum
         %span= e[:room] ? "Raum #{e[:room]}" : 'keine Raumangabe'
+      - if e[:url]
+        .row
+          %label URL
+          %span
+            %a{ :href => e[:url], :target => 'uph' } zur Projektseite
