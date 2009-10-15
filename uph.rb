@@ -5,6 +5,7 @@ get '/', :agent => /AppleWebKit.*Mobile/ do
   redirect '/iphone'
 end
 
+
 get '/' do
   content_type 'text/html', :charset => 'utf-8'
   response.headers['Cache-Control'] = 'public, max-age=1800'
@@ -17,24 +18,20 @@ get '/ical' do
   response.headers['Content-Disposition'] = 'attachment;filename=UpH.ics'
   response.headers['Cache-Control'] = 'public, max-age=300'
   
-  rss = fetch_rss
-  cal = Icalendar::Calendar.new
-  he  = HTMLEntities.new
   t   = Date.today
-
-  rss.entries.each do |entry|
-    if entry.title.match /(\d{1,2})\:(\d{1,2})-(\d{1,2})\:(\d{1,2}) (.*)/
+  cal = Icalendar::Calendar.new
+  parse_rss(fetch_rss.entries).each do |entry|
+    if entry[:start] && entry[:end]
       cal.event do
-        uid     entry.guid
-        dtstart DateTime.civil(t.year, t.month, t.day, $1.to_i, $2.to_i)
-        dtend   DateTime.civil(t.year, t.month, t.day, $3.to_i, $4.to_i)
-        summary he.decode($5)
+        uid     entry[:id]
+        dtstart DateTime.civil(t.year, t.month, t.day, entry[:start][0..1].to_i, entry[:start][3..4].to_i)
+        dtend   DateTime.civil(t.year, t.month, t.day, entry[:end][0..1].to_i, entry[:end][3..4].to_i)
+        summary entry[:title]
         #description ''
-        url     entry.link
+        url     entry[:link]
       end
     end
   end
-
   cal.to_ical
 end
 
@@ -80,11 +77,12 @@ helpers do
           :room    => $5,
           :title   => he.decode($6),
           :description => nil,
-          :url     => entry.link
+          :link    => entry.link
         }
       else
         {
-          :title   => entry.title
+          :id      => entry.guid,
+          :title   => he.decode(entry.title)
         }
       end
     end
