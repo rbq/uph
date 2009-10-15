@@ -12,9 +12,9 @@ get '/ical' do
   response.headers['Content-Disposition'] = 'attachment;filename=UpH.ics'
   response.headers['Cache-Control'] = 'public, max-age=300'
   
-  rss = SimpleRSS.parse open('http://www.unperfekthaus.de/feed/rss.xml')
-  he  = HTMLEntities.new
+  rss = fetch_rss
   cal = Icalendar::Calendar.new
+  he  = HTMLEntities.new
   t   = Date.today
 
   rss.entries.each do |entry|
