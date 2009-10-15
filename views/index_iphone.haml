@@ -9,7 +9,7 @@
     %fieldset
       .row
         %label Zeit
-        %input{ :value => e[:start] + (e[:end] ? " bis #{e[:end]}" : '') + ' Uhr',  :type => 'text', :disabled => 'disabled' }
+        %span= e[:start] + (e[:end] ? " bis #{e[:end]}" : '') + ' Uhr'
       .row
         %label Raum
-        %input{ :value => e[:room] ? "Raum #{e[:room]}" : 'keine Raumangabe', :type => 'text', :disabled => 'disabled' }
+        %span= e[:room] ? "Raum #{e[:room]}" : 'keine Raumangabe'
