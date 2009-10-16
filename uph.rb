@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-%w'rubygems sinatra haml simple-rss open-uri icalendar date htmlentities'.each { |l| require l }
+%w'rubygems sinatra haml sass simple-rss open-uri icalendar date htmlentities'.each { |l| require l }
 
 get '/' do
   content_type 'text/html', :charset => 'utf-8'
