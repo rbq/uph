@@ -82,7 +82,12 @@ helpers do
       else
         {
           :id      => entry.guid,
-          :title   => he.decode(entry.title)
+          :start   => nil,
+          :end     => nil,
+          :room    => nil,
+          :title   => he.decode(entry.title),
+          :description => nil,
+          :link    => nil
         }
       end
     end

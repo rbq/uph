@@ -9,7 +9,10 @@
     %fieldset
       .row
         %label Zeit
-        %span= e[:start] + (e[:end] ? " bis #{e[:end]}" : '') + ' Uhr'
+        - if e[:start]
+          %span= e[:start] + (e[:end] ? " bis #{e[:end]}" : '') + ' Uhr'
+        - else
+          %span= 'keine Zeitangabe'
       .row
         %label Raum
         %span= e[:room] ? "Raum #{e[:room]}" : 'keine Raumangabe'
