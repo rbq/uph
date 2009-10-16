@@ -57,7 +57,7 @@ end
 
 
 error do
-  'Fehler: ' + env['sinatra.error'].name
+  'Fehler: ' + env['sinatra.error'].message
 end
 
 
