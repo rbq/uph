@@ -1,7 +1,7 @@
 %ul#home{ :title => 'UpHCal', :selected => 'true' }
   - @entries.each_with_index do |e, i|
     %li
-      %a{ :href => '#entry'+e[:id].to_s }= e[:title].word_shorten(28)
+      %a{ :href => '#entry'+e[:id].to_s }>= e[:title].word_shorten(28)
 
 - @entries.each_with_index do |e, i|
   %div{ :id => 'entry'+e[:id].to_s, :class => 'panel', :title => e[:title].word_shorten(28) }
@@ -17,4 +17,4 @@
         .row
           %label URL
           %span
-            %a{ :href => e[:link], :target => '_self' } zur Projektseite
+            %a{ :href => e[:link], :target => '_self' }> zur Projektseite>
