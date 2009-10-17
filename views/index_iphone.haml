@@ -1,7 +1,10 @@
 %ul#home{ :title => 'UpHCal', :selected => 'true' }
-  - @entries.each_with_index do |e, i|
-    %li
-      %a{ :href => '#entry'+e[:id].to_s }>= e[:title].word_shorten(28)
+  - @entries_grouped.each do |title, entries|
+    - if title
+      %li.group= title
+    - entries.each_with_index do |e, i|
+      %li
+        %a{ :href => '#entry'+e[:id].to_s }>= e[:title].word_shorten(28)
 
 - @entries.each_with_index do |e, i|
   %div{ :id => 'entry'+e[:id].to_s, :class => 'panel', :title => e[:title].word_shorten(28) }
