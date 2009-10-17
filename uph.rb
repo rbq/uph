@@ -64,7 +64,7 @@ end
 
 helpers do
   def fetch_rss
-    rss = SimpleRSS.parse open('http://www.unperfekthaus.de/feed/rss.xml')
+    SimpleRSS.parse open('http://www.unperfekthaus.de/feed/rss.xml')
   end
   
   def parse_rss(entries)
