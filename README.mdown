@@ -1,0 +1,5 @@
+# UpHCal #
+
+Dieser Branch wird nicht fortgesetzt, er enthält den ursprünglichen RSS-zu-iCal-Konverter.
+
+Da das UpH bereits Daten in diesem Format zur Verfügung stellt, wurde diese Idee wieder fallen gelassen.
