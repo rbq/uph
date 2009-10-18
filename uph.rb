@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-%w'rubygems backports/1.8.7 sinatra haml sass simple-rss open-uri icalendar date htmlentities'.each { |l| require l }
+%w'rubygems backports/1.8.7 sinatra haml sass simple-rss open-uri date htmlentities'.each { |l| require l }
 
 get '/', :agent => /AppleWebKit.*Mobile/ do
   redirect '/iphone'
@@ -14,25 +14,7 @@ end
 
 
 get '/ical' do
-  content_type 'text/calendar', :charset => 'utf-8'
-  response.headers['Content-Disposition'] = 'attachment;filename=UpH.ics'
-  response.headers['Cache-Control'] = 'public, max-age=300'
-  
-  t   = Date.today
-  cal = Icalendar::Calendar.new
-  parse_rss(fetch_rss.entries).each do |entry|
-    if entry[:start] && entry[:end]
-      cal.event do
-        uid     entry[:id]
-        dtstart DateTime.civil(t.year, t.month, t.day, entry[:start][0..1].to_i, entry[:start][3..4].to_i)
-        dtend   DateTime.civil(t.year, t.month, t.day, entry[:end][0..1].to_i, entry[:end][3..4].to_i)
-        summary entry[:title]
-        #description ''
-        url     entry[:link]
-      end
-    end
-  end
-  cal.to_ical
+  redirect 'http://www.unperfekthaus.de/feed/ics', 301
 end
 
 
