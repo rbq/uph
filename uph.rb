@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-%w'rubygems backports/1.8.7 sinatra haml sass simple-rss open-uri date htmlentities'.each { |l| require l }
+%w'rubygems backports/1.8.7 sinatra haml sass simple-rss open-uri date tzinfo htmlentities'.each { |l| require l }
 
 get '/', :agent => /AppleWebKit.*Mobile/ do
   redirect '/iphone'
@@ -23,7 +23,7 @@ get '/iphone' do
   response.headers['Cache-Control'] = 'public, max-age=1800'
   @entries = parse_rss(fetch_rss.entries)
   @entries_grouped = @entries.group_by{ |e| e[:start] }.sort
-  @now = DateTime.now.new_offset(+1/24).strftime('%H:%M')
+  @now = TZInfo::Timezone.get('Europe/Berlin').now.strftime('%H:%M')
   haml :'iphone/index', :layout => :'iphone/layout'
 end
 
