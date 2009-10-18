@@ -3,7 +3,7 @@
     - if title
       %li.group= title
     - entries.each_with_index do |e, i|
-      %li
+      %li{ :class => e[:end] && (e[:end] <= @now) ? 'over' : 'normal' }
         %a{ :href => '#entry'+e[:id].to_s }>= e[:title].word_shorten(28)
 
 - @entries.each_with_index do |e, i|

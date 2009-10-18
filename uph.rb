@@ -23,6 +23,7 @@ get '/iphone' do
   response.headers['Cache-Control'] = 'public, max-age=1800'
   @entries = parse_rss(fetch_rss.entries)
   @entries_grouped = @entries.group_by{ |e| e[:start] }.sort
+  @now = DateTime.now.new_offset(+1/24).strftime('%H:%M')
   haml :'iphone/index', :layout => :'iphone/layout'
 end
 
