@@ -5,8 +5,11 @@ get '/', :agent => /AppleWebKit.*Mobile/ do
   redirect '/iphone'
 end
 
-
 get '/' do
+  redirect '/about'
+end
+
+get '/about' do
   content_type 'text/html', :charset => 'utf-8'
   response.headers['Cache-Control'] = 'public, max-age=1800'
   haml :'screen/index', :layout => :'screen/layout'
