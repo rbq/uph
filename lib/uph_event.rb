@@ -18,8 +18,8 @@ class UphEvent
   def guid;  @guid;  end
   def title; @title; end
   def short_title;  @short_title ||= sanitize_title(@title); end
-  def desc;  @desc;  end
-  def start; @start; end
+  def desc;  @desc; end
+  def start; @start || ''; end
   def end;   @end;   end
   def room;  @room;  end
   def link;  @link;  end

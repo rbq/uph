@@ -1,6 +1,6 @@
 %ul#home{ :title => 'UpHCal', :selected => 'true' }
   - @entries_grouped.each do |title, entries|
-    - if title
+    - if title != ''
       %li.group= title
     - entries.each_with_index do |e, i|
       %li{ :class => e.end && (e.end <= @now) ? 'over' : 'normal' }
@@ -12,7 +12,7 @@
     %fieldset
       .row
         %label Zeit
-        - if e.start
+        - if e.start != ''
           %span= e.start + (e.end ? " bis #{e.end}" : '') + ' Uhr'
         - else
           %span= 'keine Zeitangabe'
