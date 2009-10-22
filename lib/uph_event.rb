@@ -2,7 +2,7 @@ class UphEvent
   def initialize(entry)
     he  = HTMLEntities.new
     if entry.title.match \
-      /(\d{1,2}\:\d{1,2})(-(\d{1,2}\:\d{1,2}))? (Raum ([A-Z0-9]+)\: )?(.*)/
+      /(\d{1,2}\:\d{1,2})(-(\d{1,2}\:\d{1,2}))? (Raum ([a-zA-Z0-9]+)\: )?(.*)/
       @guid  = entry.guid
       @start = $1
       @end   = $3
