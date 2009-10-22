@@ -3,24 +3,24 @@
     - if title
       %li.group= title
     - entries.each_with_index do |e, i|
-      %li{ :class => e[:end] && (e[:end] <= @now) ? 'over' : 'normal' }
-        %a{ :href => '#entry'+e[:id].to_s }>= e[:title].word_shorten(28)
+      %li{ :class => e.end && (e.end <= @now) ? 'over' : 'normal' }
+        %a{ :href => '#entry'+e.guid.to_s }>= e.short_title.word_shorten(28)
 
 - @entries.each_with_index do |e, i|
-  %div{ :id => 'entry'+e[:id].to_s, :class => 'panel', :title => e[:title].word_shorten(28) }
-    %h2= e[:title]
+  %div{ :id => 'entry'+e.guid.to_s, :class => 'panel', :title => e.short_title.word_shorten(28) }
+    %h2= e.title
     %fieldset
       .row
         %label Zeit
-        - if e[:start]
-          %span= e[:start] + (e[:end] ? " bis #{e[:end]}" : '') + ' Uhr'
+        - if e.start
+          %span= e.start + (e.end ? " bis #{e.end}" : '') + ' Uhr'
         - else
           %span= 'keine Zeitangabe'
       .row
         %label Raum
-        %span= e[:room] ? "Raum #{e[:room]}" : 'keine Raumangabe'
-      - if e[:link]
+        %span= e.room ? "Raum #{e.room}" : 'keine Raumangabe'
+      - if e.link
         .row
           %label URL
           %span
-            %a{ :href => e[:link], :target => '_self' }> zur Projektseite
+            %a{ :href => e.link, :target => '_self' }> zur Projektseite
