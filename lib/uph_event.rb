@@ -37,6 +37,7 @@ class UphEvent
     when /CMS-Talk/; 'CMS-Talk'
     when /Drupaletics/; 'Drupaletics'
     when /FMA \/ Kali/; 'FMA / Kali'
+    when /Freie Religion/; 'Freie Religion'
     when /Geschlossene Feier/; 'Geschlossene Feier'
     when /Geschlossene Gess?ellschaft/; 'Geschlossene Gesellschaft'
     when /Grosses Dinner-Buffet/; 'Grosses Dinner-Buffet'
