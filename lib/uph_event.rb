@@ -49,6 +49,7 @@ class UphEvent
     when /Matthias Scheidig Design/; 'Matthias Scheidig Design'
     when /Physik und Elektroniklabor/; 'Physik-/Elektroniklabor'
     when /Probe: unplugged Rock Pop-Music/; 'Probe: unplugged Rock Pop'
+    when /Scottys Modellecke/; 'Scottys Modellecke'
     when /Sinfonia/; 'Sinfonia'
     when /Möestyle/; 'Airbrush Möestyle'
     when /Ruhrstadtmaler/; 'Der Ruhrstadtmaler'
