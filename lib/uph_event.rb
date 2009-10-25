@@ -51,6 +51,7 @@ class UphEvent
     when /Linuxabend/; 'Linuxabend'
     when /Lotuscafe/; 'Lotuscafe'
     when /Matthias Scheidig Design/; 'Matthias Scheidig Design'
+    when /My body is my home/; 'My body is my home'
     when /Physik und Elektroniklabor/; 'Physik-/Elektroniklabor'
     when /Probe: unplugged Rock Pop-Music/; 'Probe: unplugged Rock Pop'
     when /Scottys Modellecke/; 'Scottys Modellecke'
