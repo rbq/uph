@@ -30,8 +30,10 @@ class UphEvent
     t.sub!(/ \(.*/, '')
     t.sub!(/[`´]s/, '\'s')
     t.sub!(/Probe - /, 'Probe: ')
+    t.sub!(/Öffentliche Bandprobe - /, 'Probe: ')
     
     case t
+    when /Absolut Brunch/; 'Absolut Brunch'
     when /Alles was fliegt/; 'Alles was fliegt'
     when /Butcherboy/; 'Butcherboy'
     when /CMS-Talk/; 'CMS-Talk'
@@ -43,6 +45,7 @@ class UphEvent
     when /Grosses Dinner-Buffet/; 'Grosses Dinner-Buffet'
     when /e-stylez/; 'e-stylez'
     when /Jeet Kune Do/; 'Jeet Kune Do'
+    when /Kuvertieraktion/; 'Kuvertieraktion'
     when /LIEDERMACHER-PROBE/; 'Probe: Liedermacher'
     when /Linuxabend/; 'Linuxabend'
     when /Lotuscafe/; 'Lotuscafe'
