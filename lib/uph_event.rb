@@ -30,7 +30,8 @@ class UphEvent
     t.sub!(/ \(.*/, '')
     t.sub!(/[`´]s/, '\'s')
     t.sub!(/Probe - /, 'Probe: ')
-    t.sub!(/Öffentliche Bandprobe - /, 'Probe: ')
+    t.sub!(/(Öffentliche )?Bandprobe - /, 'Probe: ')
+    t.sub!(/(Offener )?Vortrag - /, 'Vortrag: ')
     
     case t
     when /Absolut Brunch/; 'Absolut Brunch'
