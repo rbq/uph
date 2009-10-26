@@ -30,6 +30,7 @@ class UphEvent
     t.sub!(/ \(.*/, '')
     t.sub!(/[`´]s/, '\'s')
     t.sub!(/Probe - /, 'Probe: ')
+    t.sub!(/^Offene[rs] /, '')
     t.sub!(/(Öffentliche )?Bandprobe - /, 'Probe: ')
     t.sub!(/(Offener )?Vortrag - /, 'Vortrag: ')
     
@@ -39,7 +40,9 @@ class UphEvent
     when /Butcherboy/; 'Butcherboy'
     when /CMS-Talk/; 'CMS-Talk'
     when /Drupaletics/; 'Drupaletics'
+    when /Encouraging Training/; 'Encouraging Training'
     when /FMA \/ Kali/; 'FMA / Kali'
+    when /Fotostammtisch/; 'Fotostammtisch'
     when /Freie Religion/; 'Freie Religion'
     when /Geschlossene Feier/; 'Geschlossene Feier'
     when /Geschlossene Gess?ellschaft/; 'Geschlossene Gesellschaft'
@@ -47,6 +50,7 @@ class UphEvent
     when /e-stylez/; 'e-stylez'
     when /Jeet Kune Do/; 'Jeet Kune Do'
     when /Kuvertieraktion/; 'Kuvertieraktion'
+    when /Latin-Footwork/; 'Latin-Footwork'
     when /LIEDERMACHER-PROBE/; 'Probe: Liedermacher'
     when /Linuxabend/; 'Linuxabend'
     when /Lotuscafe/; 'Lotuscafe'
@@ -54,6 +58,8 @@ class UphEvent
     when /My body is my home/; 'My body is my home'
     when /Physik und Elektroniklabor/; 'Physik-/Elektroniklabor'
     when /Probe: unplugged Rock Pop-Music/; 'Probe: unplugged Rock Pop'
+    when /Salsa, Bachata und Merengue/; 'Salsa, Bachata, Merengue'
+    when /Salsakurse/; 'Salsakurse'
     when /Scottys Modellecke/; 'Scottys Modellecke'
     when /Sinfonia/; 'Sinfonia'
     when /Möestyle/; 'Airbrush Möestyle'
