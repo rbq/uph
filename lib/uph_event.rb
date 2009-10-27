@@ -30,6 +30,7 @@ class UphEvent
     t.sub!(/ \(.*/, '')
     t.sub!(/ \/ .*/, '')
     t.sub!(/[`´]s/, '\'s')
+    #t.sub!(/ & .*/, '')
     t.sub!(/Probe - /, 'Probe: ')
     t.sub!(/^Offene[rs] /, '')
     t.sub!(/(Öffentliche )?Bandprobe - /, 'Probe: ')
@@ -38,6 +39,7 @@ class UphEvent
     case t
     when /Absolut Brunch/; 'Absolut Brunch'
     when /Alles was fliegt/; 'Alles was fliegt'
+    when /Alles was schwimmt/; 'Alles was schwimmt'
     when /Butcherboy/; 'Butcherboy'
     when /CMS-Talk/; 'CMS-Talk'
     when /Drupaletics/; 'Drupaletics'
@@ -53,6 +55,7 @@ class UphEvent
     when /Grosses Dinner-Buffet/; 'Großes Dinner-Buffet'
     when /Jeet Kune Do/; 'Jeet Kune Do'
     when /Joomla User Group/; 'Joomla User Group'
+    when /Kalifornische Massage/; 'Kalifornische Massage'
     when /Kuvertieraktion/; 'Kuvertieraktion'
     when /Kultur der Technik/; 'Kultur der Technik'
     when /Latin-Footwork/; 'Latin-Footwork'
@@ -60,7 +63,9 @@ class UphEvent
     when /Linuxabend/; 'Linuxabend'
     when /Lotuscafe/; 'Lotuscafe'
     when /Malerei auf dem Weg zur Perfektion/; 'Malerei'
+    when /Margarita-Tag/; 'Margarita-Tag'
     when /Massage und integrative Körperarbeit/; 'Massage'
+    when /Massagestunde/; 'Massagestunde'
     when /Matthias Scheidig Design/; 'Matthias Scheidig Design'
     when /Meridian-Yoga/; 'Meridian-Yoga'
     when /My body is my home/; 'My body is my home'
@@ -72,6 +77,7 @@ class UphEvent
     when /Salsakurse/; 'Salsakurse'
     when /Scottys Modellecke/; 'Scottys Modellecke'
     when /Schreib- und Spielwerkstatt/; 'Schreib- und Spielwerkstatt'
+    when /Schreib- & Spielwerkstatt/; 'Schreib- und Spielwerkstatt'
     when /Sinfonia/; 'Sinfonia'
     when /Möestyle/; 'Airbrush Möestyle'
     when /Ruhrstadtmaler/; 'Der Ruhrstadtmaler'
