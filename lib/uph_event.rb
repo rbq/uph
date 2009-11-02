@@ -33,6 +33,7 @@ class UphEvent
     #t.sub!(/ & .*/, '')
     t.sub!(/Probe - /, 'Probe: ')
     t.sub!(/^Offene[rs] /, '')
+    t.sub!(/^Öffentliche[rs] /, '')
     t.sub!(/(Öffentliche )?Bandprobe - /, 'Probe: ')
     t.sub!(/(Offener )?Vortrag - /, 'Vortrag: ')
     
@@ -51,6 +52,7 @@ class UphEvent
     when /Fortbildung Spielpädagogik/; 'Fortbildung Spielpädagogik'
     when /Fotostammtisch/; 'Fotostammtisch'
     when /Freie Religion/; 'Freie Religion'
+    when /Geschl. Seminar/; 'Geschlossenes Seminar'
     when /Geschlossene Feier/; 'Geschlossene Feier'
     when /Geschlossene Gess?ellschaft/; 'Geschlossene Gesellschaft'
     when /Grosses Dinner-Buffet/; 'Großes Dinner-Buffet'
@@ -64,6 +66,7 @@ class UphEvent
     when /Linuxabend/; 'Linuxabend'
     when /Lotuscafe/; 'Lotuscafe'
     when /Malerei auf dem Weg zur Perfektion/; 'Malerei'
+    when /Malerei nach Musik/; 'Malerei nach Musik'
     when /Margarita-Tag/; 'Margarita-Tag'
     when /Massage und integrative Körperarbeit/; 'Massage'
     when /Massagestunde/; 'Massagestunde'
@@ -81,6 +84,7 @@ class UphEvent
     when /Schreib- und Spielwerkstatt/; 'Schreib- und Spielwerkstatt'
     when /Schreib- & Spielwerkstatt/; 'Schreib- und Spielwerkstatt'
     when /Sinfonia/; 'Sinfonia'
+    when /Stammtisch.*sneep.info/; 'Stammtisch sneep.info'
     when /Möestyle/; 'Airbrush Möestyle'
     when /Ruhrstadtmaler/; 'Der Ruhrstadtmaler'
     else t
