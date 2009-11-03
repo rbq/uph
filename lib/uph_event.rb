@@ -43,6 +43,7 @@ class UphEvent
     when /Alles was schwimmt/; 'Alles was schwimmt'
     when /Butcherboy/; 'Butcherboy'
     when /CMS-Talk/; 'CMS-Talk'
+    when /Datenschutz und Privatsphäre/; 'Datenschutz und Privatsphäre'
     when /Drupal Usergroup/; 'Drupal Usergroup'
     when /Drupaletics/; 'Drupaletics'
     when /Encouraging Training/; 'Encouraging Training'
