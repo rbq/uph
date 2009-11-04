@@ -47,6 +47,7 @@ class UphEvent
     when /Drupal Usergroup/; 'Drupal Usergroup'
     when /Drupaletics/; 'Drupaletics'
     when /Encouraging Training/; 'Encouraging Training'
+    when /English Speaking Corner/; 'English Speaking Corner'
     when /e-stylez/; 'e-stylez'
     when /FMA \/ Kali/; 'FMA / Kali'
     when /Führung durch das Unperfekthaus/; 'Hausführung'
@@ -73,9 +74,11 @@ class UphEvent
     when /Massagestunde/; 'Massagestunde'
     when /Matthias Scheidig Design/; 'Matthias Scheidig Design'
     when /Meridian-Yoga/; 'Meridian-Yoga'
+    when /Möestyle/; 'Airbrush Möestyle'
     when /My body is my home/; 'My body is my home'
     when /Physik und Elektroniklabor/; 'Physik-/Elektroniklabor'
     when /Piratenpartei Deutschland/; 'Piratenpartei Deutschland'
+    when /Pocket-PC-Club Ruhr/; 'Pocket-PC-Club Ruhr'
     when /Probe: unplugged Rock Pop-Music/; 'Probe: unplugged Rock Pop'
     when /Projektentwicklung und Beratung/; 'Projektentwicklung'
     when /Rüegg Drum.*Cool/; 'Rüegg Drum\'s Cool'
@@ -86,8 +89,8 @@ class UphEvent
     when /Schreib- & Spielwerkstatt/; 'Schreib- und Spielwerkstatt'
     when /Sinfonia/; 'Sinfonia'
     when /Stammtisch.*sneep.info/; 'Stammtisch sneep.info'
-    when /Möestyle/; 'Airbrush Möestyle'
     when /Ruhrstadtmaler/; 'Der Ruhrstadtmaler'
+    when /Webworker Stammtisch/; 'Webworker-Stammtisch'
     else t
     end
   end
