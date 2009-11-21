@@ -17,16 +17,14 @@ class UphEvent
   
   def guid;  @guid;  end
   def title; @title; end
-  def short_title;  @short_title ||= sanitize_title(@title); end
+  def short_title;  @short_title ||= UphEvent.sanitize_title(@title); end
   def desc;  @desc; end
   def start; @start || ''; end
   def end;   @end;   end
   def room;  @room;  end
   def link;  @link;  end
   
-  private
-  
-  def sanitize_title(t)
+  def self.sanitize_title(t)
     t.sub!(/ \(.*/, '')
     t.sub!(/ \/ .*/, '')
     t.sub!(/[`´]s/, '\'s')
@@ -53,6 +51,7 @@ class UphEvent
     when /Führung durch das Unperfekthaus/; 'Hausführung'
     when /Fortbildung Spielpädagogik/; 'Fortbildung Spielpädagogik'
     when /Fotostammtisch/; 'Fotostammtisch'
+    when /Fotokurs Das/; 'Fotokurs'
     when /Freie Religion/; 'Freie Religion'
     when /Geschl. Seminar/; 'Geschlossenes Seminar'
     when /Geschlossene Feier/; 'Geschlossene Feier'
@@ -64,6 +63,7 @@ class UphEvent
     when /Kuvertieraktion/; 'Kuvertieraktion'
     when /Kultur der Technik/; 'Kultur der Technik'
     when /Latin-Footwork/; 'Latin-Footwork'
+    when /Lebensrettende Sofortmaßnahmen/; 'Lebensrettende Sofortmaßn.'
     when /LIEDERMACHER-PROBE/; 'Probe: Liedermacher'
     when /Linuxabend/; 'Linuxabend'
     when /Lotuscafe/; 'Lotuscafe'
@@ -91,6 +91,7 @@ class UphEvent
     when /Stammtisch.*sneep.info/; 'Stammtisch sneep.info'
     when /Ruhrstadtmaler/; 'Der Ruhrstadtmaler'
     when /Webworker Stammtisch/; 'Webworker-Stammtisch'
+    when /WG-Hotel.*ausgebucht/; 'WG-Hotel ausgebucht'
     else t
     end
   end
