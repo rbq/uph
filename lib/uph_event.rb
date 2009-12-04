@@ -14,7 +14,7 @@ class UphEvent
       @title = he.decode(entry.title)
     end
   end
-  
+
   def guid;  @guid;  end
   def title; @title; end
   def short_title;  @short_title ||= UphEvent.sanitize_title(@title); end
@@ -23,7 +23,11 @@ class UphEvent
   def end;   @end;   end
   def room;  @room;  end
   def link;  @link;  end
-  
+
+  def all_day?
+    @start == Uph::OPEN_FROM && @end == Uph::OPEN_TO
+  end
+
   def self.sanitize_title(t)
     t.sub!(/ \(.*/, '')
     t.sub!(/ \/ .*/, '')
@@ -34,7 +38,7 @@ class UphEvent
     t.sub!(/^Öffentliche[rs] /, '')
     t.sub!(/(Öffentliche )?Bandprobe - /, 'Probe: ')
     t.sub!(/(Offener )?Vortrag - /, 'Vortrag: ')
-    
+
     case t
     when /Absolut Brunch/; 'Absolut Brunch'
     when /Alles was fliegt/; 'Alles was fliegt'

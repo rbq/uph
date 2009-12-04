@@ -1,12 +1,17 @@
 %ul#home{ :title => 'UpHCal', :selected => 'true' }
+  - if @entries_all_day
+    %li.group= 'Ganztägig'
+    - @entries_all_day.each do |e|
+      %li{ :class => e.end && (e.end <= @now) ? 'over' : 'normal' }
+        %a{ :href => '#entry'+e.guid.to_s }>= e.short_title.word_shorten(28)
   - @entries_grouped.each do |title, entries|
     - if title != ''
       %li.group= title
-    - entries.each_with_index do |e, i|
+    - entries.each do |e|
       %li{ :class => e.end && (e.end <= @now) ? 'over' : 'normal' }
         %a{ :href => '#entry'+e.guid.to_s }>= e.short_title.word_shorten(28)
 
-- @entries.each_with_index do |e, i|
+- @entries.each do |e|
   %div{ :id => 'entry'+e.guid.to_s, :class => 'panel', :title => e.short_title.word_shorten(28) }
     %h2= e.title
     %fieldset
