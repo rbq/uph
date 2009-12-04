@@ -15,11 +15,9 @@ get '/about' do
   haml :'screen/index', :layout => :'screen/layout'
 end
 
-
 get '/ical' do
   redirect 'http://www.unperfekthaus.de/feed/ics', 301
 end
-
 
 get '/iphone' do
   content_type 'text/html', :charset => 'utf-8'
@@ -30,23 +28,19 @@ get '/iphone' do
   haml :'iphone/index', :layout => :'iphone/layout'
 end
 
-
 get '/stylesheets/:name.css' do
   content_type 'text/css', :charset => 'utf-8'
   response.headers['Cache-Control'] = 'public, max-age=1800'
   sass :"stylesheets/#{params[:name]}"
 end
 
-
 not_found do
   redirect '/'
 end
 
-
 error do
   'Fehler: ' + env['sinatra.error'].message
 end
-
 
 helpers do
   def fetch_rss
