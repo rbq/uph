@@ -71,6 +71,7 @@ class UphEvent
     when /LIEDERMACHER-PROBE/; 'Probe: Liedermacher'
     when /Linuxabend/; 'Linuxabend'
     when /Lotuscafe/; 'Lotuscafe'
+    when /Lunch & Dinner-Buffet/; 'Lunch-/Dinner-Buffet'
     when /Malerei auf dem Weg zur Perfektion/; 'Malerei'
     when /Malerei nach Musik/; 'Malerei nach Musik'
     when /Margarita-Tag/; 'Margarita-Tag'
