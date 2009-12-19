@@ -43,6 +43,7 @@ class UphEvent
     when /Absolut Brunch/; 'Absolut Brunch'
     when /Alles was fliegt/; 'Alles was fliegt'
     when /Alles was schwimmt/; 'Alles was schwimmt'
+    when /Arbeitskreis(es)? Drogenpolitik/; 'Arbeitskreis Drogenpolitik'
     when /Butcherboy/; 'Butcherboy'
     when /CMS-Talk/; 'CMS-Talk'
     when /Datenschutz und Privatsphäre/; 'Datenschutz, Privatsphäre'
