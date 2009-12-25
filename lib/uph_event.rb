@@ -98,6 +98,7 @@ class UphEvent
     when /Sinfonia/; 'Sinfonia'
     when /Stammtisch.*sneep.info/; 'Stammtisch sneep.info'
     when /Ruhrstadtmaler/; 'Der Ruhrstadtmaler'
+    when /Unperfekthaus.+heute geschlossen/; 'heute geschlossen'
     when /Webworker Stammtisch/; 'Webworker-Stammtisch'
     when /WG-Hotel.*ausgebucht/; 'WG-Hotel ausgebucht'
     else t
