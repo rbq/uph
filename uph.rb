@@ -1,5 +1,17 @@
 #!/usr/bin/env ruby
-%w'rubygems backports/1.8.7 sinatra haml sass simple-rss open-uri date tzinfo htmlentities lib/uph lib/uph_event'.each { |l| require l }
+
+require 'rubygems'
+require 'backports/1.8.7'
+require 'sinatra'
+require 'haml'
+require 'sass'
+require 'simple-rss'
+require 'open-uri'
+require 'date'
+require 'tzinfo'
+require 'htmlentities'
+require 'lib/uph'
+require 'lib/uph_event'
 
 get '/', :agent => /AppleWebKit.*Mobile/ do
   redirect '/iphone'
