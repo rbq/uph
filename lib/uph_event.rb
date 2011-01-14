@@ -38,6 +38,7 @@ class UphEvent
     t.sub!(/^Öffentliche[rs] /, '')
     t.sub!(/(Öffentliche )?Bandprobe - /, 'Probe: ')
     t.sub!(/(Offener )?Vortrag - /, 'Vortrag: ')
+    t.sub!(/Konzert von /, 'Konzert: ')
 
     case t
     when /Absolut Brunch/; 'Absolut Brunch'
@@ -58,6 +59,7 @@ class UphEvent
     when /Flammenwerk/; 'Flammenwerk'
     when /Fortbildung Spielpädagogik/; 'Fortbildung Spielpädagogik'
     when /Fotostammtisch/; 'Fotostammtisch'
+    when /Fotografenstammtisch/; 'Fotografenstammtisch'
     when /Fotokurs Das/; 'Fotokurs'
     when /Freie Religion/; 'Freie Religion'
     when /Geschl. Seminar/; 'Geschlossenes Seminar'
@@ -65,6 +67,7 @@ class UphEvent
     when /Geschlossene Gess?ellschaft/; 'Geschlossene Gesellschaft'
     when /Grosses Dinner-Buffet/; 'Großes Dinner-Buffet'
     when /Habari Usergroup/; 'Habari-Usergroup'
+    when /HUT - DESIGN/; 'Hut-Design'
     when /Intuitive Objektgestaltung/; 'Intuitive Objektgestaltung'
     when /Jeet Kune Do/; 'Jeet Kune Do'
     when /Joomla User Group/; 'Joomla User Group'
